@@ -67,16 +67,7 @@ async function claimGold(url) {
 
         if (response.ok) {
             const html = await response.text();  // 获取 HTML 页面内容
-
-            // // 解析 HTML 页面内容并检查领取结果
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const rewardStatus = doc.querySelector('.reward-status');  // 根据页面实际情况选择正确的选择器
-            if (1) {
-                console.log('金币领取状态:', rewardStatus.textContent);
-            } else {
-                console.log('未找到金币领取的状态,可能已领取');
-            }
+            console.log('金币领取成功');
         } else {
             console.log('请求领取金币失败:', response.status);
         }
